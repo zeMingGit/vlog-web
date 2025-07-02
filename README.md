@@ -7,14 +7,19 @@
 ### 安装依赖
 
 ```
-npm install
+pnpm install
 ```
 
-### 本地运行
+### 常用脚本说明
 
-```
-npm run dev
-```
+| 脚本命令         | 说明                     |
+| ---------------- | ------------------------ |
+| pnpm run dev     | 本地开发环境启动文档站点 |
+| pnpm run build   | 构建生产环境静态文档     |
+| pnpm run preview | 预览构建后的文档站点     |
+| pnpm run lint    | 使用 ESLint 检查代码规范 |
+| pnpm run format  | 使用 Prettier 格式化代码 |
+| pnpm run prepare | 初始化 Husky Git 钩子    |
 
 ## 文档添加内容规范
 
