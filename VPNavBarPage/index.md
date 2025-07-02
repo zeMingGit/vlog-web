@@ -1,5 +1,6 @@
 ---
 layout: home
+gitChangelog: false
 ---
 
 <div class="wrap">
