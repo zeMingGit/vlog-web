@@ -1,0 +1,43 @@
+{
+  "name": "vlog",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "lint": "eslint --cache .",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "author": "zeMing",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "nanoid": "^5.1.5",
+    "vue-amazing-ui": "^2.4.14"
+  },
+  "devDependencies": {
+    "@nolebase/vitepress-plugin-git-changelog": "^2.18.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.1",
+    "eslint": "^9.30.1",
+    "eslint-plugin-vue": "^10.2.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "vite-plugin-inspect": "^0.8.9",
+    "vitepress": "^1.6.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue,md,json,css,scss}": [
+      "prettier --write"
+    ],
+    ".vitepress/**/*.{js,ts,tsx,vue}": [
+      "eslint --cache --fix"
+    ]
+  }
+}
