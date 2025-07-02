@@ -20,6 +20,14 @@
 
 ## 二、Vue 套件
 
+| 名称                                                                        | 版本                                                | GitHub                                                                                        | 描述                         |
+| --------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------- |
+| [Vue 3](https://cn.vuejs.org/guide/introduction)                            | ![version](https://img.shields.io/npm/v/vue)        | [![stars](https://img.shields.io/github/stars/vuejs/core)](https://github.com/vuejs/core)     | 新一代渐进式 JavaScript 框架 |
+| [Vue 2](https://v2.cn.vuejs.org/v2/guide/) [cli](https://cli.vuejs.org/zh/) | 2.7.16                                              | [![stars](https://img.shields.io/github/stars/vuejs/vue)](https://github.com/vuejs/vue)       | 经典稳定版本                 |
+| [Pinia](https://pinia.vuejs.org/zh/)                                        | ![version](https://img.shields.io/npm/v/pinia)      | [![stars](https://img.shields.io/github/stars/vuejs/pinia)](https://github.com/vuejs/pinia)   | Vue 状态管理解决方案         |
+| [Vue Router](https://router.vuejs.org/zh/)                                  | ![version](https://img.shields.io/npm/v/vue-router) | [![stars](https://img.shields.io/github/stars/vuejs/router)](https://github.com/vuejs/router) | 官方路由解决方案             |
+| [Vite](https://cn.vite.dev/)                                                | ![version](https://img.shields.io/npm/v/vite)       | [![stars](https://img.shields.io/github/stars/vitejs/vite)](https://github.com/vitejs/vite)   | 下一代前端构建工具           |
+
 ### 1. 企业级 UI 框架
 
 | 名称                                      | 版本                                                    | GitHub                                                                                                                      | 描述                            |
@@ -27,12 +35,11 @@
 | [Element Plus](https://element-plus.org/) | ![version](https://img.shields.io/npm/v/element-plus)   | [![stars](https://img.shields.io/github/stars/element-plus/element-plus)](https://github.com/element-plus/element-plus)     | 基于 Vue 3 的企业级中后台组件库 |
 | [Ant Design Vue](https://www.antdv.com/)  | ![version](https://img.shields.io/npm/v/ant-design-vue) | [![stars](https://img.shields.io/github/stars/vueComponent/ant-design-vue)](https://github.com/vueComponent/ant-design-vue) | Ant Design 的 Vue 3 实现        |
 
-### 2. 实用工具
+### 2. 实用工具库
 
 | 名称                                                             | 版本                                                  | GitHub                                                                                          | 描述                              |
 | ---------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------- |
 | [VueUse](https://vueuse.org/) [中文](https://vueuse.pages.dev/)  | ![version](https://img.shields.io/npm/v/@vueuse/core) | [![stars](https://img.shields.io/github/stars/vueuse/vueuse)](https://github.com/vueuse/vueuse) | 组合式 API 工具集                 |
-| [Pinia](https://pinia.vuejs.org/zh/)                             | ![version](https://img.shields.io/npm/v/pinia)        | [![stars](https://img.shields.io/github/stars/vuejs/pinia)](https://github.com/vuejs/pinia)     | Vue 状态管理解决方案              |
 | [axios](https://axios-http.com/zh/docs/intro)                    | ![version](https://img.shields.io/npm/v/axios)        | [![stars](https://img.shields.io/github/stars/axios/axios)](https://github.com/axios/axios)     | 基于 Promise 的 HTTP 客户端       |
 | [lodash](https://lodash.com/)                                    | ![version](https://img.shields.io/npm/v/lodash)       | [![stars](https://img.shields.io/github/stars/lodash/lodash)](https://github.com/lodash/lodash) | JavaScript 实用工具库             |
 | [lodash-es](https://www.lodashjs.com/)                           | ![version](https://img.shields.io/npm/v/lodash-es)    | [![stars](https://img.shields.io/github/stars/lodash/lodash)](https://github.com/lodash/lodash) | ES Modules 版本                   |
@@ -58,4 +65,37 @@
 
 </details>
 
-## 小结
+## 三、React套件
+
+| 名称                                      | 版本                                                           | GitHub                                                                                                            | 描述                             |
+| ----------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [React](https://zh-hans.react.dev/)       | ![version](https://img.shields.io/npm/v/react)                 | [![stars](https://img.shields.io/github/stars/facebook/react)](https://github.com/facebook/react)                 | 用于构建用户界面的 JavaScript 库 |
+| [Next.js](https://nextjs.org/)            | ![version](https://img.shields.io/npm/v/next)                  | [![stars](https://img.shields.io/github/stars/vercel/next.js)](https://github.com/vercel/next.js)                 | React 生产级框架（SSR/SSG）      |
+| [Redux](https://redux.js.org/)            | ![version](https://img.shields.io/npm/v/redux)                 | [![stars](https://img.shields.io/github/stars/reduxjs/redux)](https://github.com/reduxjs/redux)                   | 可预测状态容器                   |
+| [Zustand](https://zustand-demo.pmnd.rs/)  | ![version](https://img.shields.io/npm/v/zustand)               | [![stars](https://img.shields.io/github/stars/pmndrs/zustand)](https://github.com/pmndrs/zustand)                 | 轻量级状态管理方案               |
+| [React Router](https://reactrouter.com/)  | ![version](https://img.shields.io/npm/v/react-router-dom)      | [![stars](https://img.shields.io/github/stars/remix-run/react-router)](https://github.com/remix-run/react-router) | 官方路由解决方案                 |
+| [React Query](https://tanstack.com/query) | ![version](https://img.shields.io/npm/v/@tanstack/react-query) | [![stars](https://img.shields.io/github/stars/TanStack/query)](https://github.com/TanStack/query)                 | 数据获取与管理库                 |
+
+### 1. 企业级 UI 框架
+
+| 名称                              | 版本                                                   | GitHub                                                                                                          | 描述                 |
+| --------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- | -------------------- |
+| [MUI](https://mui.com/)           | ![version](https://img.shields.io/npm/v/@mui/material) | [![stars](https://img.shields.io/github/stars/mui/material-ui)](https://github.com/mui/material-ui)             | Material Design 实现 |
+| [Ant Design](https://ant.design/) | ![version](https://img.shields.io/npm/v/antd)          | [![stars](https://img.shields.io/github/stars/ant-design/ant-design)](https://github.com/ant-design/ant-design) | 企业级 UI 设计语言   |
+
+## 四、数据可视化
+
+| 名称                                                         | 版本                                                       | GitHub                                                                                                                | 描述                         |
+| ------------------------------------------------------------ | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| [ECharts](https://echarts.apache.org/zh/index.html)          | ![version](https://img.shields.io/npm/v/echarts)           | [![stars](https://img.shields.io/github/stars/apache/echarts)](https://github.com/apache/echarts)                     | 百度开源的强大可视化库       |
+| [React ECharts](https://github.com/hustcc/echarts-for-react) | ![version](https://img.shields.io/npm/v/echarts-for-react) | [![stars](https://img.shields.io/github/stars/hustcc/echarts-for-react)](https://github.com/hustcc/echarts-for-react) | ECharts 的 React 封装        |
+| [VChart](https://www.visactor.io/)                           | ![version](https://img.shields.io/npm/v/@visactor/vchart)  | [![stars](https://img.shields.io/github/stars/apache/echarts)](https://github.com/apache/echarts)                     | 基于可视化语法的高性能图表库 |
+
+## 五、表格与网格
+
+<!-- ### 📋 表格解决方案 -->
+
+| 名称                                      | 版本                                                       | GitHub                                                                                                                  | 描述                                    |
+| ----------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| [AG Grid](https://www.ag-grid.com/)       | ![version](https://img.shields.io/npm/v/ag-grid-community) | [![stars](https://img.shields.io/github/stars/ag-grid/ag-grid)](https://github.com/ag-grid/ag-grid)                     | 企业级数据表格（支持React/Vue/Angular） |
+| [Handsontable](https://handsontable.com/) | ![version](https://img.shields.io/npm/v/handsontable)      | [![stars](https://img.shields.io/github/stars/handsontable/handsontable)](https://github.com/handsontable/handsontable) | 类似Excel的交互式表格                   |
