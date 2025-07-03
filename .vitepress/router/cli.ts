@@ -5,6 +5,14 @@ const cli: DefaultTheme.SidebarItem = {
   collapsed: false,
   base: '/VPContent/cli',
   items: [
+    {
+      text: 'Git 使用',
+      collapsed: true,
+      items: [
+        { text: '基本使用', link: '/git' },
+        { text: 'Git Flow工作流', link: '/gitFlow' },
+      ],
+    },
     { text: 'Vite', link: '/vite' },
     { text: 'TypeScript', link: '/typeScript' },
     { text: 'Class 类', link: '/class' },

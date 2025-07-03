@@ -1,20 +1,16 @@
-# git问题记录
+# Git 基础
 
 ## 概要
 
-欢迎来到 Git 文档！Git 是一款分布式版本控制系统，广泛用于协作开发和版本管理。本文档将帮助你了解 Git 的核心概念、基本操作以及高级技巧。
+欢迎来到 [Git](https://git-scm.com/downloads) 文档！Git 是一款分布式版本控制系统，广泛用于协作开发和版本管理。本文档将帮助你了解 Git 的核心概念、基本操作以及高级技巧。
 
-::: tip git下载地址
-https://git-scm.com/downloads
-:::
+熟悉git的流程或者命令行可以去 [这里](https://help.gitee.com/learn-Git-Branching/?locale=zh_CN) 学习Git 命令
 
 ## 一、git流程基础/命令行
 
-熟悉git的流程或者命令行可以去这里 [学习Git 命令](https://help.gitee.com/learn-Git-Branching/?locale=zh_CN)
-
 ### 1. git流程/命令行
 
-```shell
+```sh
 git init      # 初始化本地仓库
 git clone xxx # 克隆仓库
 git add .     # 暂存
@@ -140,7 +136,7 @@ git config --global pull.rebase false
 
 ## 小结
 
-#### 主要特性
+### 主要特性
 
 - **分布式版本控制**: Git 是一款分布式版本控制系统，每个开发者都可以拥有完整的代码仓库副本，方便离线工作和团队协作。
 
@@ -148,7 +144,7 @@ git config --global pull.rebase false
 
 - **强大的分支管理**: Git 提供了强大的分支管理功能，可以轻松创建、切换和合并分支，以便同时进行多个任务。
 
-#### 核心优势
+### 核心优势
 
 - **速度和性能**: Git 能够处理大型项目和大量代码文件，并提供高效的性能和响应速度。
 
@@ -156,6 +152,6 @@ git config --global pull.rebase false
 
 - **灵活性和可定制性**: Git 可以根据项目的需求进行灵活配置和定制，以满足不同开发团队的要求。
 
-#### 目标
+**目标**
 
 Git 的目标是为开发者提供一个高效、可靠的版本控制系统，帮助团队协作和管理代码。我们致力于提供优秀的工具和文档，帮助开发者更好地理解和应用 Git。
