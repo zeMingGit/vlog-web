@@ -2,36 +2,32 @@
 
 ## 概要
 
-`提示：node、pnpm、nvm等一些环境设置`
+对 **node**、**pnpm**和**nvm** 等一些环境设置。
 
 ## 技术细节
 
-### 1. node
+### 一、node
 
-```shell
-# node下载地址
-https://nodejs.org/dist/
-```
+这里进行 [下载](https://nodejs.org/dist/) 不同版本的node
 
-配置淘宝镜像
+::: code-group
 
-```shell
+```sh [配置淘宝镜像]
 # 查看当前的镜像地址
 npm get registry
+
 # 设置淘宝镜像
 npm config set registry https://registry.npm.taobao.org/
 
 # 新的镜像
 https://registry.npmmirror.com/
-
 # 替换的淘宝镜像
 registry.npm.taobao.org ==》 registry.npmmirror.com
 npm.taobao.org ==》npmmirror.com
 ```
 
-常用的node版本
-
-```shell
+```sh [常用的node版本]
+v18.20.4
 v18.15.0
 v18.9.1
 v16.18.0
@@ -41,26 +37,24 @@ v12.14.0
 v10.24.1
 ```
 
-### 2. nvm(windows)
+:::
 
-```shell
-# 指导地址
-https://beltxman.com/3789.html
-```
+### 二、nvm (windows)
 
-- nvm下载地址 **（版本 `v1.1.10`）**
+nvm (windows) 的指导地址看 [这里](https://beltxman.com/3789.html)，下载版本为 **[v1.1.10]**
 
-```shell
+::: code-group
+
+```sh [nvm下载地址]
 # nvm下载地址
 https://nvm.uihtm.com/
 
 # 成功下载安装
 https://github.com/coreybutler/nvm-windows
+
 ```
 
-- 修改镜像
-
-```shell
+```sh [修改镜像]
 # 找到文件C:\Users\yourUsername\AppData\Roaming\nvm\settings.txt添加两行：
 root: D:\wangluozhuanyeke\nvm
 path: D:\wangluozhuanyeke\nodejs
@@ -69,7 +63,9 @@ node_mirror: https://npmmirror.com/mirrors/node/
 npm_mirror: https://npmmirror.com/mirrors/npm/
 ```
 
-#### 2.1 nvm命令行
+:::
+
+#### 1. nvm命令行
 
 ```shell
 nvm version
@@ -87,13 +83,9 @@ nvm reinstall-packages <version>  ## 在当前版本 node 环境下，重新   �
 nvm alias default [node版本号]     ##设置默认版本
 ```
 
-### 3. nvm(mac)
+### 三、nvm (mac)
 
-```shell
-# 指导地址
-https://www.jianshu.com/p/304656f2f6af
-https://blog.csdn.net/ForeverMyheart/article/details/127203419
-```
+nvm (mac) 的指导地址看 [这里](https://www.jianshu.com/p/304656f2f6af) 或者 [这里](https://blog.csdn.net/ForeverMyheart/article/details/127203419)。
 
 - nvm下载地址
 
@@ -120,7 +112,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ```
 
-```shell
+```sh
 source ~/.bash_profile
 
 # 在终端运行
@@ -141,18 +133,17 @@ source ~/.zshrc
 nvm alias default 10.24.1
 ```
 
-### 4. pnpm
+### 四、pnpm
 
-```shell
-# 指导地址
-https://pnpm.io/installation
-```
+pnpm 的指导地址看 [这里](https://pnpm.io/installation)
 
-- 安装
+::: code-group
 
-```shell
+```sh [安装]
 npm install -g pnpm
 ```
+
+:::
 
 下面是一个支持各自Node.js版本的过去pnpm版本的列表
 | Node.js | pnpm 7 | pnpm 8 | pnpm 9 |
@@ -165,4 +156,4 @@ npm install -g pnpm
 
 ## 小结
 
-` 提示：记录node生态`
+记录 node 生态配置
