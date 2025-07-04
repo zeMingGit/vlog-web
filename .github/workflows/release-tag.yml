@@ -1,27 +1,65 @@
-name: Create Release
- 
+name: Create Release and Tag
+
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - main  
- 
+      - main
+  workflow_dispatch:
+
 jobs:
-  build:
+  create-release:
     runs-on: ubuntu-latest
- 
+    if: github.event.pull_request.merged == true
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+      
+    - name: Format tag name
+      id: format_tag
+      run: |
+        # 获取PR标题并清理特殊字符
+        PR_TITLE="${{ github.event.pull_request.title }}"
+        # 移除特殊字符，只保留字母、数字、连字符和下划线
+        CLEAN_TITLE=$(echo "$PR_TITLE" | sed 's/[^a-zA-Z0-9_-]/_/g' | sed 's/__*/_/g' | sed 's/^_//' | sed 's/_$//')
+        # 确保长度合适（Git标签建议不超过128字符）
+        if [ ${#CLEAN_TITLE} -gt 100 ]; then
+          CLEAN_TITLE=$(echo "$CLEAN_TITLE" | cut -c1-100)
+        fi
+        echo "tag_name=$CLEAN_TITLE" >> $GITHUB_OUTPUT
+        echo "original_title=$PR_TITLE" >> $GITHUB_OUTPUT
+        echo "Formatted tag name: $CLEAN_TITLE"
       
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这是 GitHub 提供的默认 token，用于身份验证
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v${{ github.ref }} # 版本号，可以根据需要调整
-        release_name: Release v${{ github.ref }} # release 名称
+        tag_name: ${{ steps.format_tag.outputs.tag_name }}
+        release_name: ${{ steps.format_tag.outputs.original_title }}
         body: |
-            Please refer to [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
+          ## 📚 小棱镜前端学习文档更新
+            
+          ### 🚀 更新内容
+          - ${{ steps.format_tag.outputs.original_title }}
+          
+          ### 📋 PR 信息
+          - PR 标题: ${{ steps.format_tag.outputs.original_title }}
+          - PR 编号: #${{ github.event.pull_request.number }}
+          - 提交哈希: ${{ github.sha }}
+          - 合并者: ${{ github.event.pull_request.merged_by.login }}
+          - Tag 名称: ${{ steps.format_tag.outputs.tag_name }}
+          
+          ### 📝 PR 描述
+          ${{ github.event.pull_request.body }}
+          
+          ### 🔗 相关链接
+          - [PR 详情](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
+          - [GitHub 仓库](https://github.com/${{ github.repository }})
+          
+          ---
+          *此版本由 GitHub Actions 自动创建*
         draft: false
         prerelease: false
