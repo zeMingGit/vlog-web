@@ -3,7 +3,6 @@ name: Create Release
 on:
   push:
     branches:
-      - master # 触发条件，例如推送到 master 分支
       - main  
  
 jobs:
@@ -20,11 +19,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这是 GitHub 提供的默认 token，用于身份验证
       with:
-        tag_name: v1.0.${{ github.run_number }} # 版本号，可以根据需要调整
-        release_name: Release v1.0.${{ github.run_number }} # release 名称
+        tag_name: v${{ github.ref }} # 版本号，可以根据需要调整
+        release_name: Release v${{ github.ref }} # release 名称
         body: |
-          Changes in this Release
-          - First Change
-          - Second Change
+            Please refer to [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
         draft: false
         prerelease: false
