@@ -11,5 +11,3 @@
 在相关的工作中，我使用了 Three.js 构建了可交互的全国3D地图可视化方案，支持省级行政区划的动态自定义渲染与数据驱动配置。更多实现细节及[案例](https://threehub.cn/#/example)请参见GitHub仓库：[git仓库位置](https://gitee.com/zeMingGit/three-map)
 
 ## 小结
-
-` 提示：`
