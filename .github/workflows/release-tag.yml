@@ -1,0 +1,30 @@
+name: Create Release
+ 
+on:
+  push:
+    branches:
+      - master # 触发条件，例如推送到 master 分支
+      - main  
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这是 GitHub 提供的默认 token，用于身份验证
+      with:
+        tag_name: v1.0.${{ github.run_number }} # 版本号，可以根据需要调整
+        release_name: Release v1.0.${{ github.run_number }} # release 名称
+        body: |
+          Changes in this Release
+          - First Change
+          - Second Change
+        draft: false
+        prerelease: false
