@@ -25,7 +25,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
         { text: 'Css布局', link: '/css' },
         { text: 'Grid', link: '/grid' },
         { text: '工具代码', link: '/toolCode' },
-        { text: 'git记录', link: '/git' },
         { text: '个人记录', link: '/my' },
       ],
     },
