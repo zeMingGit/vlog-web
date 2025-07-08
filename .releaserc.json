@@ -21,8 +21,8 @@
       {
         "assets": [
           {
-            "path": ".vitepress/dist/**",
-            "label": "构建产物"
+            "path": "dist.zip",
+            "label": "dist.zip"
           }
         ]
       }

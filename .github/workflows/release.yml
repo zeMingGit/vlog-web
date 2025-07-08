@@ -25,8 +25,7 @@ jobs:
         run: npm run build
 
       - name: Zip dist folder
-        run: |
-          zip -r dist.zip dist
+        run: zip -r dist.zip .vitepress/dist/
 
       - name: Run semantic-release
         env:
