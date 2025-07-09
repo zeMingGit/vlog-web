@@ -6,9 +6,7 @@ hero:
   # text: 前端技术预览文档
   tagline: 探索细节，激发创意
   image:
-    # src: /img/vue.svg
     src: https://cdn.chinachdu.com/webStatic/wechat-applets/nyt-static/xin_vlogLogo.png
-    # src: /img/xin_vlogLogo.png
   actions:
     - theme: brand
       text: 快速开始
