@@ -20,11 +20,11 @@ const members = [
     ]
   },
   {
-    avatar: 'https://foruda.gitee.com/avatar/1677169054941917823/9249306_invictuspm_1658799010.png!avatar200',
-    name: 'PanMin',
+    avatar: 'https://www.github.com/pm1017.png',
+    name: 'Martin Pan',
     title: '贡献者',
     links: [
-      { icon: 'github', link: 'https://github.com/panmin1206' },
+      { icon: 'github', link: 'https://github.com/pm1017' },
     ]
   },
 ]

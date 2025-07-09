@@ -92,8 +92,8 @@ export default defineConfig({
             // mapByEmailAliases: ['2439340964@qq.com']
           },
           {
-            name: 'panmin',
-            username: 'pm1205',
+            name: 'Martin Pan',
+            username: 'pm1017',
           },
         ],
       }),
