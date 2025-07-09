@@ -38,19 +38,18 @@ jobs:
         run: npx semantic-release
 
       - name: Create release PR branch and commit artifacts
-        id: create-pr-branch
         run: |
           TIMESTAMP=$(date +%s)
-          BRANCH_NAME=release-artifacts-$TIMESTAMP
+          BRANCH_NAME="release-artifacts-$TIMESTAMP"
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
           git config user.name "semantic-release[bot]"
           git config user.email "bot@users.noreply.github.com"
 
-          git checkout -b $BRANCH_NAME
+          git checkout -b "$BRANCH_NAME"
           git add CHANGELOG.md package.json
           git commit -m "chore: release artifacts [skip ci]" || echo "No changes to commit"
-          git push --set-upstream origin $BRANCH_NAME
+          git push --set-upstream origin "$BRANCH_NAME"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -63,8 +62,8 @@ jobs:
           title: "chore: release artifacts"
           body: "This PR contains automatically generated CHANGELOG.md and updated package.json"
           commit-message: "chore: release artifacts [skip ci]"
-          delete-branch: true
           draft: false
+          delete-branch: true
 
       - name: Attempt auto-merge PR
         uses: actions/github-script@v7
