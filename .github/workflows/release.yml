@@ -51,7 +51,6 @@ jobs:
       - name: Create PR using GitHub CLI
         run: |
           sudo apt-get update && sudo apt-get install -y gh
-          echo $GH_TOKEN | gh auth login --with-token
           gh pr create --base main --head release-pr-branch \
             --title "chore: release artifacts" \
             --body "Automated release commit with CHANGELOG.md and package.json"
