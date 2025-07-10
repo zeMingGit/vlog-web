@@ -13,20 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node & pnpm
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Zip dist folder
         run: zip -r dist.zip .vitepress/dist/
@@ -34,4 +31,4 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm release
+        run: npm run release
