@@ -1,33 +1,32 @@
-name: Release
+name: Release Tag
 
 on:
   push:
     branches:
-      - main
+      - release/**
 
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node & pnpm
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: pnpm
+          # cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Zip dist folder
-        run: zip -r dist.zip .vitepress/dist/
+        run: pnpm install
 
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release
+        run: pnpm release

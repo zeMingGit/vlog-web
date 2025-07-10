@@ -22,7 +22,7 @@
         "assets": [
           {
             "path": "dist.zip",
-            "label": "Static site bundle (v${nextRelease.version})"
+            "label": "构建产物 (v${nextRelease.version})"
           }
         ],
         "successComment": "🎉 This release ${nextRelease.version} is now available!"
