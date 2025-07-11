@@ -1,0 +1,42 @@
+name: Release PR
+
+on:
+  push:
+    branches:
+      - release/**
+
+jobs:
+  release-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Bump version and changelog
+        run: npx standard-version
+
+      - name: Commit changelog and version
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md package.json
+          git commit -m "chore(release): bump version and update changelog" || echo "No changes to commit"
+
+      - name: Push changes and create PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(release): bump version and update changelog"
+          branch: release/auto-changelog
+          title: "chore(release): bump version and update changelog"
+          body: "Automated PR to update changelog and version"
+          base: main
