@@ -6,4 +6,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-- 更新 ([db4348e](https://github.com/zeMinng/vlog-web/commit/db4348ee9153b69e476d82083f25d89c2a795108))
+- 更新 ([a1487c7](https://github.com/zeMinng/vlog-web/commit/a1487c7fe13dd1c75f74aa47330e8e7051909baa))
