@@ -18,7 +18,7 @@
             "label": "构建产物 (v${nextRelease.version})"
           }
         ],
-        "successComment": "🎉 This release ${nextRelease.version} is now available!"
+        "successComment": "🎉 此版本 ${nextRelease.version} 现在以推出!"
       }
     ]
   ]
