@@ -1,0 +1,40 @@
+name: Release PR
+
+on:
+  push:
+    branches:
+      - release/**
+
+jobs:
+  release-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version and changelog
+        run: npx standard-version
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(release): 版本升级及更新日志"
+          branch: release/auto-changelog
+          title: "chore(release): 版本升级及更新日志"
+          body: "自动 PR：更新 CHANGELOG 和版本号"
+          base: main
