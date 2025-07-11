@@ -1,23 +1,14 @@
-// import { defineConfig } from 'vitepress'
-/**
- * 见：https://emersonbottero.github.io/vitepress-plugin-mermaid/
- * 见：https://blog.csdn.net/m0_52316372/article/details/147746863
- */
-import { withMermaid } from 'vitepress-plugin-mermaid'
+import { defineConfig } from 'vitepress'
+import Inspect from 'vite-plugin-inspect'
 import nav from './script/Nav'
 import Sidebar from './script/Sidebar'
 import search from './script/Search'
-import { createVitePlugins } from '../build/vite'
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-export default withMermaid({
-  mermaid: {
-    // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
-  },
-  // optionally set additional config for plugin itself with MermaidPluginConfig
-  mermaidPlugin: {
-    class: 'mermaid my-class', // set additional css classes for parent container
-  },
-  /** 以下为 VitePress 的配置 */
+export default defineConfig({
   lang: 'zh-CN',
   title: 'zeMing',
   description: 'vlog - 小棱镜 快速入门指南',
@@ -52,7 +43,7 @@ export default withMermaid({
       },
     }, // 搜索配置
     logo: { light: '/img/logo.svg', dark: '/img/logoFFF.svg', width: 24, height: 24 },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/zeMinng' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/zeMingGit' }],
     // 文章底部链接
     editLink: {
       // pattern: 'https://gitee.com/zeminga/vlog/tree/master/docs/:path', // 不这么做，因为查看代码太过方便，不利于文档安全性
@@ -76,7 +67,7 @@ export default withMermaid({
     }, // 允许自定义最后更新文本和日期格式
     langMenuLabel: '多语言',
     returnToTopLabel: '返回顶部',
-    outlineTitle: '本页目录',
+    outlineTitle: '本页目录', // 设置大纲的标题
     sidebarMenuLabel: '菜单',
     darkModeSwitchLabel: '切换外观',
     lightModeSwitchTitle: '切换到浅色模式',
@@ -90,10 +81,29 @@ export default withMermaid({
     },
   },
   vite: {
-    plugins: createVitePlugins(),
+    plugins: [
+      Inspect(),
+      GitChangelog({
+        repoURL: () => 'https://github.com/zeMingGit/vlog-web',
+        mapAuthors: [
+          {
+            name: 'zeMing',
+            username: 'zeMingGit',
+            // mapByEmailAliases: ['2439340964@qq.com']
+          },
+          {
+            name: 'Martin Pan',
+            username: 'pm1017',
+          },
+        ],
+      }),
+      GitChangelogMarkdownSection(),
+    ],
     server: {
+      // tip：默认端口号在win系统上有些许问题，自测mac正常。暂时不打开。-zeMing
+      // port: 8888,
       host: true,
-      open: '/',
+      open: '/', // 不做修改，不打开！！！
     },
   },
 })
