@@ -1,29 +1,16 @@
-// import { defineConfig } from 'vitepress'
-/**
- * 见：https://emersonbottero.github.io/vitepress-plugin-mermaid/
- * 见：https://blog.csdn.net/m0_52316372/article/details/147746863
- */
-import { withMermaid } from 'vitepress-plugin-mermaid'
+import { defineConfig, loadEnv } from 'vitepress'
+import { MermaidMarkdown } from 'vitepress-plugin-mermaid'
 import nav from './script/Nav'
 import Sidebar from './script/Sidebar'
 import search from './script/Search'
 import { createVitePlugins } from '../build/vite'
 
-export default withMermaid({
-  mermaid: {
-    // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
-  },
-  // optionally set additional config for plugin itself with MermaidPluginConfig
-  mermaidPlugin: {
-    class: 'mermaid my-class', // set additional css classes for parent container
-  },
-  /** 以下为 VitePress 的配置 */
+const env = loadEnv('', process.cwd())
+
+export default defineConfig({
   lang: 'zh-CN',
   title: 'zeMing',
   description: 'vlog - 小棱镜 快速入门指南',
-  // base: '/',
-  // srcDir: 'src',
-  // outDir: './public',  // 保证输出文件不干扰 public 目录
   cleanUrls: true, //是否启用干净的URL，例如/about代替/about.html
   locales: {
     root: { label: '简体中文' },
@@ -31,6 +18,9 @@ export default withMermaid({
   },
   markdown: {
     lineNumbers: true,
+    config(md) {
+      md.use(MermaidMarkdown)
+    },
   },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/img/logo.svg' }],
@@ -45,9 +35,9 @@ export default withMermaid({
     search: {
       provider: 'algolia',
       options: {
-        appId: '2HEGWEY7SW',
-        apiKey: '2e4d854dceb221dedc1ecb0b397a8373',
-        indexName: 'vlogxiao',
+        appId: env.VITE_ALGOLIA_APP_ID,
+        apiKey: env.VITE_ALGOLIA_API_KEY,
+        indexName: env.VITE_ALGOLIA_INDEX_NAME,
         locales: { ...search },
       },
     }, // 搜索配置
@@ -91,6 +81,12 @@ export default withMermaid({
   },
   vite: {
     plugins: createVitePlugins(),
+    optimizeDeps: {
+      include: ['mermaid'], // 优化 mermaid 依赖
+    },
+    ssr: {
+      noExternal: ['mermaid'], // 确保 Mermaid 图表在 SSR（服务端渲染）模式下不被外部化
+    },
     server: {
       host: true,
       open: '/',
