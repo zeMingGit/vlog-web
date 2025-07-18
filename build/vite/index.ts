@@ -3,6 +3,7 @@ import {
   GitChangelog,
   GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
+import { MermaidPlugin } from 'vitepress-plugin-mermaid'
 
 export function createVitePlugins() {
   return [
@@ -21,5 +22,6 @@ export function createVitePlugins() {
       ],
     }),
     GitChangelogMarkdownSection(),
+    MermaidPlugin(),
   ]
 }
